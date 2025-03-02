@@ -1,0 +1,37 @@
+CREATE TABLE IF NOT EXISTS users(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  email TEXT UNIQUE NOT NULL,
+  password TEXT NOT NULL,
+  role TEXT NOT NULL DEFAULT 'non-admin',
+  created_at DATETIME
+);
+
+CREATE TABLE IF NOT EXISTS posts(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER NOT NULL,
+  title TEXT NOT NULL,
+  content TEXT NOT NULL,
+  views INTEGER NOT NULL DEFAULT 0,
+  created_at DATETIME,
+  FOREIGN KEY (user_id) REFERENCES users (id)
+);
+
+CREATE TABLE IF NOT EXISTS comments(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER NOT NULL,
+  post_id INTEGER NOT NULL,
+  content TEXT NOT NULL,
+  created_at DATETIME,
+  FOREIGN KEY (user_id) REFERENCES users (id),
+  FOREIGN KEY (post_id) REFERENCES posts (id)
+);
+
+-- CREATE TABLE IF NOT EXISTS remember_tokens(
+--   id INTEGER PRIMARY KEY AUTOINCREMENT,
+--   token TEXT NOT NULL,
+--   user_id INTEGER NOT NULL,
+--   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+--   expires_at DATETIME NOT NULL,
+--   FOREIGN KEY (user_id) REFERENCES users (id)
+-- );
