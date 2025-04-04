@@ -32,7 +32,7 @@ $posts = [
 $comments = [
     ['post_id' => 1, 'user_id' => 2, 'content' => 'Great first post! Looking forward to more.', 'created_at' => $timestamp],
     ['post_id' => 1, 'user_id' => 3, 'content' => 'Welcome to the blogosphere!', 'created_at' => $timestamp],
-    ['post_id' => 2, 'user_id' => 1, 'content' => 'These are some really useful tips, thanks!', 'created_at' => $timestamp],
+    ['post_id' => 2, 'user_id' => 3, 'content' => 'These are some really useful tips, thanks!', 'created_at' => $timestamp],
     ['post_id' => 3, 'user_id' => 2, 'content' => 'I\'ve been using these practices and they really help.', 'created_at' => $timestamp],
 ];
 
