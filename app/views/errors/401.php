@@ -4,7 +4,7 @@
 <p>
   <?php if(App\Services\Auth::user() !== null): ?>
     <?php if(App\Services\Auth::user()->role === 'admin'): ?>
-      <a href="/admin/dashboard">Return to Dashboard</a>
+      <a href="/admin/home">Return to Dashboard</a>
     <?php else: ?>
       <a href="/">Return to Homepage</a>
     <?php endif; ?>

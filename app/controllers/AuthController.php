@@ -42,7 +42,7 @@ class AuthController {
       $currentUser = Auth::user();
 
       if ($currentUser->role === 'admin') {
-        return Router::redirect("/admin/dashboard");
+        return Router::redirect("/admin/home");
       }
 
       return Router::redirect("/");
